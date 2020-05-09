@@ -67,8 +67,6 @@ jobs:
       run: |
         cf login -a "$CF_API_URL" -o "$CF_ORG" -s "$CF_SPACE" -u "$CF_USERNAME" -p "$CF_PASSWORD"
         scripts/migrate-databases.sh pal-tracker .
-    - name: Make gradlew executable
-      run: chmod +x ./gradlew
       env:
         CF_API_URL: ${{ secrets.CF_API_URL }}
         CF_ORG: ${{ secrets.CF_ORG }}
